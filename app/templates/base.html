@@ -12,7 +12,9 @@
     <button onclick="window.location.href='/add/'">Add task</button>
     <ul>
         {% for task in tasks %}
-        <li>{{ task }}</li>
+        <li>{{ task }} <form action="/delete/" method="POST"><input type="hidden" name="task" value="{{ task }}"><button
+                    type="submit">Удалить</button></form>
+        </li>
         {% endfor %}
     </ul>
 
